@@ -1,1 +1,1250 @@
-My GitHub Page
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Tagtag: a modern HTML preprocessor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        
+            <style>
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+ * Removes default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+}
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*
+ * Sets consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/*
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+</style>
+        
+
+        
+<link href='http://fonts.googleapis.com/css?family=Quattrocento|Goudy+Bookletter+1911|Molengo' rel='stylesheet' type='text/css'>
+<style>
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+body{
+	margin: 30px;
+	font-size: 18px;
+	font-family: 'Quattrocento', serif;
+	color: #333;
+	background-color: #fff;
+	line-height: 125%;
+}
+pre{
+	margin: 0;
+}
+p {
+	width: 40em;
+}
+em{
+	font-weight: bold;
+	font-style: normal;
+	color: #000;
+}
+
+#wrapper{
+	width: 80%;
+}
+
+#title{
+	font-size: 96px;
+	font-family: 'Molengo', sans-serif;
+	-letter-kern: -15px -5px 2px -3px -5px;
+	-letter-color: #333 #333 #333 #D21E3E #D21E3E #D21E3E;
+	margin-top: 0;
+	margin-left: 0px;
+	visibility: hidden;
+}
+.description {
+	display: inline-block;
+	color: #999;
+	margin-top: -12px;
+	margin-left: 0px;
+	font-size: 20px;
+	padding: 3px 0px;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+}
+a{
+	color: #333;
+}
+a:hover{
+	color: #07739F;
+}
+h2{
+	font-family: 'Molengo', sans-serif;
+	font-size: 48px;
+}
+h3{
+	font-family: 'Molengo', sans-serif;
+	font-size: 36px;
+	margin: 0.6em 0;
+}
+
+.tag{
+	padding: 10px;
+}
+
+.tag h3{
+	font-family: Courier, monospace;
+	font-size: 28px;
+}
+.tag h4{
+	font-family: 'Molengo', sans-serif;
+}
+.tag li{
+	margin-bottom: 10px;
+	width: 40em;
+}
+.tag ul{
+	list-style-type: circle;
+	list-style-position: outside;
+	margin-left: 0;
+	padding-left: 0;
+}
+.tag ol{
+	list-style-position: outside;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.codehilite{
+	background-color: #eee;
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.docs-example .codehilite{
+	padding: 0;
+	border: none;
+	margin: 0;
+}
+.docs-example{
+	word-wrap: break-word;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	font-family: Consolas, Courier, monospace;
+}
+.docs-example .pane{
+	position: relative;
+	padding: 15px;
+	border-collapse: collapse;
+}
+.docs-example .left{
+	float: left;
+	width: 50%;
+	/*border-right: 1px dotted #ccc;*/
+}
+.docs-example .right{
+	float: left;
+	width: 50%;
+	border-left: 1px dotted #ccc;
+}
+.docs-example .pane .pane-label{
+	font-variant: small-caps;
+	position: absolute;
+	left: 2px;
+	top: -4px;
+	letter-spacing: 0.1em;
+	font-size: 14px;
+	color: #999;
+}
+
+
+#sidebar{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 20%;
+	background-color: #fff;
+	border-left: 1px dotted #999;
+	padding: 0;
+}
+#sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#sidebar ul * * a {
+	padding-left: 20px;
+}
+#sidebar ul ul{
+	display: none;
+}
+ul.active {
+	display: block !important;
+}
+#sidebar li {
+	width: 100%;
+}
+#sidebar a{
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	width: 100%;
+	height: 26px;
+	padding-left: 8px;
+	padding-top: 1.5px;
+	padding-bottom: 1.5px;
+}
+#sidebar a:hover{
+	background-color: #07739F;
+	color: #fff !important;
+}
+a.active {
+	background-color: #07739F;
+	color: #fff !important;
+}
+#sidebar-header{
+	font-size: 28px;
+	font-family: 'Molengo', sans-serif;
+	padding: 8px;
+	margin-bottom: 0;
+}
+
+</style>
+<style>
+.hll { background-color: #ffffcc }
+.c { color: #999988; font-style: italic } /* Comment */
+.err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.k { color: #000000; font-weight: bold } /* Keyword */
+.o { color: #000000; font-weight: bold } /* Operator */
+.cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.cp { color: #999999; font-weight: bold; font-style: italic } /* Comment.Preproc */
+.c1 { color: #999988; font-style: italic } /* Comment.Single */
+.cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.ge { color: #000000; font-style: italic } /* Generic.Emph */
+.gr { color: #aa0000 } /* Generic.Error */
+.gh { color: #999999 } /* Generic.Heading */
+.gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.go { color: #888888 } /* Generic.Output */
+.gp { color: #555555 } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #aaaaaa } /* Generic.Subheading */
+.gt { color: #aa0000 } /* Generic.Traceback */
+.kc { color: #000000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #000000; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #000000; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #000000; font-weight: bold } /* Keyword.Pseudo */
+.kr { color: #000000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.m { color: #009999 } /* Literal.Number */
+.s { color: #d01040 } /* Literal.String */
+.na { color: #008080 } /* Name.Attribute */
+.nb { color: #0086B3 } /* Name.Builtin */
+.nc { color: #445588; font-weight: bold } /* Name.Class */
+.no { color: #008080 } /* Name.Constant */
+.nd { color: #3c5d5d; font-weight: bold } /* Name.Decorator */
+.ni { color: #800080 } /* Name.Entity */
+.ne { color: #990000; font-weight: bold } /* Name.Exception */
+.nf { color: #990000; font-weight: bold } /* Name.Function */
+.nl { color: #990000; font-weight: bold } /* Name.Label */
+.nn { color: #555555 } /* Name.Namespace */
+.nt { color: #000080 } /* Name.Tag */
+.nv { color: #008080 } /* Name.Variable */
+.ow { color: #000000; font-weight: bold } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mf { color: #009999 } /* Literal.Number.Float */
+.mh { color: #009999 } /* Literal.Number.Hex */
+.mi { color: #009999 } /* Literal.Number.Integer */
+.mo { color: #009999 } /* Literal.Number.Oct */
+.sb { color: #d01040 } /* Literal.String.Backtick */
+.sc { color: #d01040 } /* Literal.String.Char */
+.sd { color: #d01040 } /* Literal.String.Doc */
+.s2 { color: #d01040 } /* Literal.String.Double */
+.se { color: #d01040 } /* Literal.String.Escape */
+.sh { color: #d01040 } /* Literal.String.Heredoc */
+.si { color: #d01040 } /* Literal.String.Interpol */
+.sx { color: #d01040 } /* Literal.String.Other */
+.sr { color: #009926 } /* Literal.String.Regex */
+.s1 { color: #d01040 } /* Literal.String.Single */
+.ss { color: #990073 } /* Literal.String.Symbol */
+.bp { color: #999999 } /* Name.Builtin.Pseudo */
+.vc { color: #008080 } /* Name.Variable.Class */
+.vg { color: #008080 } /* Name.Variable.Global */
+.vi { color: #008080 } /* Name.Variable.Instance */
+.il { color: #009999 } /* Literal.Number.Integer.Long */
+</style>
+
+
+<script>
+    setInterval(function(){
+        if (document.hidden === true || document.webkitHidden === true || document.mozHidden === true || document.msHidden === true){return;};
+        var e = document.createElement("script");
+        e.id = 'tagtag-autorefresh-ubq7ycnxjndoqdalij';
+        e.src = "http://localhost:59932/8384ab58e4aa69151254f9fb688b818b3dba492d76ce9885fd68aeff/1356327150";
+        var old_e = document.getElementById(e.id);
+        if (old_e){old_e.parentNode.removeChild(old_e);}
+        document.body.appendChild(e);
+        }, 500);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/kerning.js/0.2/kerning.min.js"></script>
+
+
+        
+        
+            <!--[if lt IE 9]>
+                <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+        
+    </head>
+    <body>
+
+
+
+<div id="wrapper" role="main">
+
+<h1 id="title">Tagtag</h1>
+
+<p><span class="description">A <i>modern</i> HTML preprocessor</span></p>
+
+<p><a name="what-is-this" class="navpoint"></a></p>
+
+<h3>What is this?</h3>
+
+<p>Include-style templating is an inelegant model for constructing pages.
+No doubt if you've spent time using one, you've seen or written code like
+this:</p>
+
+<div class="codehilite"><pre><code><span class="c">&lt;!--#include file=&quot;header.html&quot; --&gt;</span>
+In recent years, much research has been devoted to the exploration of thin clients; nevertheless, few have deployed the understanding of robots. After years of extensive research into superpages, we confirm the construction of neural networks, validating that the famous random algorithm for the improvement of DHCP by Smith et al. [4] is recursively enumerable.
+<span class="c">&lt;!--#include file=&quot;footer.html&quot; --&gt;</span>
+</code></pre></div>
+
+<p>Having the header and footer seperate is inconvenient, but this system
+gets especially problematic when you have different versions of both:
+pages which incorporate elements in slightly different ways, and so on.</p>
+
+<p>Tagtag takes the approach of extending tags. Tags produce and modify content.</p>
+
+<div class="codehilite"><pre><code><span class="cp">&lt;!x&gt;</span>
+</code></pre></div>
+
+<p>There are lots of small things that need to happen when finalizing
+a web page. Email addresses need to be obfuscated, comments need to be removed, 
+you need A/B versions, assets need minifcation,
+and derivative languages (Coffeescript, LESS, SASS) need to be compiled.</p>
+
+<p>Tagtag can do these for you.
+<em>Save time, not electrons.</em></p>
+
+<p>I wanted a tool that was flexible and extensible, UNIXy,
+and didn't bring in the kitchen sink.
+This is my attempt to make that tool.</p>
+
+<p><a name="examples" class="navpoint"></a></p>
+
+<h3>Quick examples</h3>
+
+<h4>Get up and running:</h4>
+
+<div class="codehilite"><pre><code>
+</code></pre></div>
+
+<h4>Or write your own boilerplate:</h4>
+
+<div class="codehilite"><pre><code>
+</code></pre></div>
+
+<h4>5-line blog (account for drafts)</h4>
+
+<p><code>index.tt</code></p>
+
+<div class="codehilite"><pre><code>
+</code></pre></div>
+
+<p><code>posts/on-lemurs-and-hemmingsnatches.tt</code></p>
+
+<div class="codehilite"><pre><code>
+</code></pre></div>
+
+<p>This document was <a href="">itself written in tagtag</a>.</p>
+
+<p><a name="installing" class="navpoint"></a></p>
+
+<h3>Installing</h3>
+
+<p>The easiest thing to use is pip:</p>
+
+<div class="codehilite"><pre><code>pip install tagtag
+</code></pre></div>
+
+<p>You can also download the source from Github (<a href="">.zip</a> / <a href="">tarball</a>),
+and install it traditionally:</p>
+
+<div class="codehilite"><pre><code>python setup.py install
+</code></pre></div>
+
+<p>name/brand
+github link/fork me!</p>
+
+<h3>Feedback requested!</h3>
+
+<p>Email me: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x73;&#x61;&#x6d;&#x2e;&#x6d;&#x2e;&#x62;&#x69;&#x72;&#x63;&#x68;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">s<span style="display: none;">s</span>a<span style="display: none;">Q</span>m<span style="display: none;">v</span>.<span style="display: none;">u</span>m<span style="display: none;">9</span>.<span style="display: none;">a</span>b<span style="display: none;">T</span>i<span style="display: none;">a</span>r<span style="display: none;">j</span>c<span style="display: none;">r</span>h<span style="display: none;">O</span>@<span style="display: none;">R</span>g<span style="display: none;">s</span>m<span style="display: none;">O</span>a<span style="display: none;">D</span>i<span style="display: none;">s</span>l<span style="display: none;">7</span>.<span style="display: none;">f</span>c<span style="display: none;">G</span>o<span style="display: none;">X</span>m<span style="display: none;">M</span></a></p>
+
+<hr />
+
+<p><a name="how-tagtag-works" class="navpoint"></a></p>
+
+<h3>How tagtag works</h3>
+
+<p>parsing overview</p>
+
+<p>bubble/capture DOM model</p>
+
+<p>tag lookup</p>
+
+<p>By default use the global escape <code>%tag~</code>, which is repetition-coded
+    (<code>%tag~%tag~</code> &nbsp;&rarr;&nbsp; <code>%tag~</code>, a single goes to &lt;!).
+    Specify an alternative scheme with <code>escape</code> (such as &amp;<code>lt;!</code>)</p>
+
+<p><a name="usage" class="navpoint"></a></p>
+
+<h3>Usage</h3>
+
+<div class="codehilite"><pre><code><span class="nv">$ </span>tagtag --help
+usage: tagtag <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-c CONFIG<span class="o">]</span> <span class="o">[</span>--no-default-config<span class="o">]</span> <span class="o">[</span>-w<span class="o">]</span>
+              <span class="o">[</span>-d WATCH_DEPENDENCIES<span class="o">]</span> <span class="o">[</span>--watch-bell<span class="o">]</span> <span class="o">[</span>-I TAG_DIRECTORIES<span class="o">]</span>
+              <span class="o">[</span>--no-default-tags<span class="o">]</span> <span class="o">[</span>--print-tags<span class="o">]</span> <span class="o">[</span>-s<span class="o">]</span>
+              paths <span class="o">[</span>paths ...<span class="o">]</span>
+
+Process tags in tagtag documents.
+
+<span class="o">====</span><span class="nv">Cookbook</span><span class="o">====</span>
+Process a document:
+    tagtag some_tagtag_script.tt
+
+Process a document continuously <span class="o">(</span>on every change<span class="o">)</span>:
+    tagtag -w some_tagtag_script.tt
+
+Process a document, including <span class="nb">local </span>tags in ./tags and ./othertags:
+    tagtag -I ./tags:./othertags some_tagtag_script.tt
+
+
+positional arguments:
+  paths                 tagtag documents to proccess
+
+optional arguments:
+  -h, --help            show this <span class="nb">help </span>message and <span class="nb">exit</span>
+  -c CONFIG, --config CONFIG
+                        path to configuration script
+  --no-default-config   <span class="k">do </span>not load a config file unless specified with -c,
+                        even <span class="k">if </span>one exists in the present working directory
+  -w, --watch           run forever, updating on file modification
+  -d WATCH_DEPENDENCIES, --watch-dependencies WATCH_DEPENDENCIES
+                        colon-seperated list of files to watch in addition to
+                        the documents to be proccessed <span class="o">(</span>all documents will be
+                        updated when any change<span class="o">)</span>
+  --watch-bell          write an alarm to the console when a run has finished
+  -I TAG_DIRECTORIES, --tag-directories TAG_DIRECTORIES
+                        colon-seperated list of directories to <span class="nb">read </span>tags from
+  --no-default-tags     <span class="k">do </span>not load default tags at INSTALL_PATH/tags
+  --print-tags          list all the tags loaded <span class="k">for </span>processing the given
+                        documents
+  -s, --silent          decrease output verbosity
+</code></pre></div>
+
+<p><a name="config" class="navpoint"></a></p>
+
+<h3>Configuration File</h3>
+
+<p>NOT WRITTEN YET</p>
+
+<p><a name="content-tags" class="navpoint"></a></p>
+
+<h3>Content tags</h3>
+
+<p>attr.if will output its contents if conditions specified by its attributes
+(is, isnt, present, not-present) are true.</p>
+
+<p>attr.value outputs the value of the named attribute.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li>name: the attribute name (both)</li>
+<li>default: what to output if the attribute doesn't exist, default is empty string (.value)</li>
+<li>is: the attribute has the given value (.if)</li>
+<li>isnt: the attribute does not have the given value (.if)</li>
+<li>present: the attribute exists (.if)</li>
+<li>not-present: the attribute does not exist (.if)</li>
+</ul>
+
+<p><a name="write-tags" class="navpoint"></a></p>
+
+<h3>Writing your own tags</h3>
+
+<pre><code>Content macro tags
+python tags:
+    Don't name them after builtins!
+    attribute_passthrough and other tagtag functions
+    returning None
+    calling parse
+    example implementations
+</code></pre>
+
+<p><a name="included-content" class="navpoint"></a></p>
+
+<h3>Included content tags</h3>
+
+<pre><code>css-reset, normalize, normalize2, ...
+</code></pre>
+
+<p><a name="included-tags" class="navpoint"></a></p>
+
+<h3>Included tags</h3>
+
+
+THIS LIST IS NOT COMPLETE
+<div class="tag">
+<a name="tag-obfuscate" class="navpoint">
+	<h3>&lt;!obfuscate&gt;</h3>
+</a>
+<p>An obfuscate tag replaces content with a similar version which is less obvious in the source.
+e.g. email addresses, phone numbers, etc.</p>
+
+<p>By default it encodes the characters as entities (e.g. A &rarr; <code>&amp;#x41;</code>).</p>
+
+<h4>Attributes</h4>
+
+<p>visual: if present, do a visual obfuscation (more effective, but breaks mailto: links.)</p>
+
+
+</div>
+<div class="tag">
+<a name="tag-include" class="navpoint">
+	<h3>&lt;!include&gt;</h3>
+</a>
+<p>The include tag brings content into the document from another file.
+The content is treated as if it were inline; tags are still interpreted.</p>
+
+<p>The contents of the include tag are used as a template for the content included.
+Template variables are the subtags listed below.
+If multiple files are specified via a glob, those are appended directly after
+one another in the output.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><em>source</em>: file or file specifier (<code>*.txt</code>) to include</li>
+</ul>
+
+<h4>Subtags</h4>
+
+<ul>
+<li>&lt;<code>!content /&gt;</code> is replaced with the content of file(s)</li>
+<li>&lt;<code>!path /&gt;</code> is replaced with the path name of the file(s)</li>
+</ul>
+
+
+</div>
+<div class="tag">
+<a name="tag-exclude" class="navpoint">
+	<h3>&lt;!exclude&gt;</h3>
+</a>
+<p>An exclude tag returns the empty string. All of its contents are
+excluded from the output. (It serves as a comment as well; any
+markup inside will be ignored.)</p>
+
+
+</div>
+<div class="tag">
+<a name="tag-markdown" class="navpoint">
+	<h3>&lt;!markdown&gt;</h3>
+</a>
+<p>Convert the contents with markdown.</p>
+
+<p>Uses the markdown2 module.</p>
+
+<p>Be aware that markdown will not process content it perceives to be inside HTML elements
+unless you use the <code>markdown-in-html</code> extra with <code>markdown="1"</code> on your element(s).</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li>element: if specified, a tag (such as <code>div</code>) to wrap the content in.</li>
+<li>extras: comma seperated list of extras from https://github.com/trentm/python-markdown2/wiki/Extras</li>
+<li>no-strip: don't strip indentation off the content</li>
+<li>*: other attributes are passed-through to the element wrapping the content (but only if an element is specified).</li>
+</ul>
+
+
+</div>
+<div class="tag">
+<a name="tag-dataURI" class="navpoint">
+	<h3>&lt;!dataURI&gt;</h3>
+</a>
+<p>Includes another file as a data URI.</p>
+
+<p>The MIME type for the data URI is picked in order from:</p>
+
+<ol>
+<li>An explicit mimetype in the mimetype attribute</li>
+<li>A file extension hint in the mimehint attribute</li>
+<li>A guess based on the source file (via Python's mimetypes.guess_type)</li>
+</ol>
+
+<p>Failing all of these the MIME type is <code>application/octet-stream</code>.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><em>source</em>: file to include in a Data URI</li>
+<li><em>mimehint</em>: a file extension (e.g. <code>mimehint=".jpg"</code>) to guess the MIME type from</li>
+<li><em>mimetype</em>: an explicit MIME type (e.g. <code>mimetype="text/plain"</code>)</li>
+</ul>
+
+<h4>Examples</h4>
+
+<p>Simple case:</p>
+
+<div class="docs-example">
+
+<div class="pane left">
+<span class="pane-label">input</span>
+
+
+
+
+<div class="codehilite"><pre><code><span class="cp">&lt;!dataURI source=&quot;1px.gif&quot; /&gt;</span>
+</code></pre></div>
+
+</div>
+
+<div class="pane right">
+<span class="pane-label">output</span>
+
+        data:image/gif;base64,R0lGODlhAQABAIAAANvf7wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+
+</div>
+
+<div style="clear: both;"></div>
+</div>
+
+<p>Using a data URI in an image:</p>
+
+<div class="codehilite"><pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;data:image/gif;base64,R0lGODlhAQABAIAAANvf7wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==&quot;</span> <span class="na">alt=</span><span class="s">&quot;clear square&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+
+
+</div>
+<div class="tag">
+<a name="tag-tabular" class="navpoint">
+	<h3>&lt;!tabular&gt;</h3>
+</a>
+<p>A tabular tag reformats its contents from CSV or TSV to an HTML table.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li>format: csv or tsv for those formats, respectively.</li>
+<li>*: other attributes are passed-through to the table.</li>
+</ul>
+
+<h4>Examples</h4>
+
+<div class="docs-example">
+
+<div class="pane left">
+<span class="pane-label">input</span>
+
+
+
+
+<div class="codehilite"><pre><code><span class="cp">&lt;!tabular cellpadding=&quot;5&quot;&gt;</span>
+    name, age, sex
+    sarah, 20, F
+    fred, 21, M
+    jane, 22, F
+    joe, 24, M
+    sally, 25, F
+<span class="cp">&lt;!/tabular&gt;</span>
+</code></pre></div>
+
+</div>
+
+<div class="pane right">
+<span class="pane-label">output</span>
+
+    <table cellpadding="5" ><tr><th>        name</th><th> age</th><th> sex</th></tr><tr><td>        sarah</td><td> 20</td><td> F</td></tr><tr><td>      fred</td><td> 21</td><td> M</td></tr><tr><td>       jane</td><td> 22</td><td> F</td></tr><tr><td>       joe</td><td> 24</td><td> M</td></tr><tr><td>        sally</td><td> 25</td><td> F</td></tr></table>
+
+</div>
+
+<div style="clear: both;"></div>
+</div>
+
+
+</div>
+<div class="tag">
+<a name="tag-process" class="navpoint">
+	<h3>&lt;!process&gt;</h3>
+</a>
+<p>A process tag runs its content through a process and returns the result.
+The content is passed through stdin and stdout is returned by default (though
+stderr can be included with include-stderr).</p>
+
+<p>It also comes with a set of submodule tags which are set up to run popular commands:</p>
+
+<pre><code>process.coffee:
+    coffee -s --print $flags
+
+process.less:
+    lessc $flags -
+
+process.sass:
+    sass --stdin $flags
+
+process.uglify:
+    uglifyjs - -c $flags
+</code></pre>
+
+<p><em>These commands will only work if you have these programs installed and available from your shell.</em></p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li>before: text to add before the output of the proccess</li>
+<li>after: text to add after the output of the proccess</li>
+<li>flags: additional flags to the command line proccess</li>
+<li>command: the command to run</li>
+<li>include-stderr: if present, the returned value should include text from stderr as well.</li>
+</ul>
+
+
+</div>
+<div class="tag">
+<a name="tag-autorefresh" class="navpoint">
+	<h3>&lt;!autorefresh&gt;</h3>
+</a>
+<p>Inject a little script in the page to communicate with a little webserver.
+Update the page when tagtag writes a new version.</p>
+
+<p>The server is bound to localhost:0 (the OS assigns a random open port), but will work across domains (it uses script injection).</p>
+
+<h4>Caveats</h4>
+
+<ul>
+<li>This will only work when tagtag is watching the file in question.</li>
+<li>If tagtag stops watching (e.g. an exception was raised) the page has to be manually refreshed the first time.</li>
+</ul>
+
+
+</div>
+<div class="tag">
+<a name="tag-version" class="navpoint">
+	<h3>&lt;!version&gt;</h3>
+</a>
+<p>A version tag selectively includes or excludes content based on the value of 
+the environment variable <code>$TAGTAG_VERSION</code>.</p>
+
+<p><code>$TAGTAG_VERSION</code> is interpreted as a comma separated list.</p>
+
+<p>Either an is or an isnt tag is required.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><em>is</em>: if <code>$TAGTAG_VERSION</code> contains this value, include the content (otherwise exclude).</li>
+<li><em>isnt</em>: if <code>$TAGTAG_VERSION</code> is contains this value, exclude the content (otherwise include).</li>
+</ul>
+
+<h4>Examples</h4>
+
+<p><code>document.tt</code></p>
+
+<div class="codehilite"><pre><code>version A
+    follow me on twitter!
+version B
+    follow me on twitter, please!
+</code></pre></div>
+
+<p>In your shell:</p>
+
+<div class="codehilite"><pre><code><span class="c">#note that the variable is referred to without a $.</span>
+<span class="nv">TAGTAG_VERSION</span><span class="o">=</span>A tagtag document.tt
+</code></pre></div>
+
+
+</div>
+<div class="tag">
+<a name="tag-python" class="navpoint">
+	<h3>&lt;!python&gt;</h3>
+</a>
+<p>Evaluate the Python expression in the attribute expr, or if content is provided
+exec the code (stdout is redirected and output is returned).</p>
+
+<p>A couple handy functions which will be defined in your scope:</p>
+
+<ul>
+<li><code>strip_left</code>: strip all lines of the minimum amount of whitespace of all lines except for the first and last (for Python docstrings)</li>
+<li><code>dbg</code>: like print but to stderr (which is not redirected to the output).</li>
+</ul>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><em>expr</em>: Python expression to evaluate (mutually exclusive with content to be execed.)</li>
+</ul>
+
+
+</div>
+<div class="tag">
+<a name="tag-literal" class="navpoint">
+	<h3>&lt;!literal&gt;</h3>
+</a>
+<p>Literalize all tags in the block (don't interpret them).</p>
+
+<p>Sequesters its contents on capture and then returns them back on bubble.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><em>strip-left</em>: if present, left align the block</li>
+</ul>
+
+
+</div>
+
+<h3>Troubleshooting &amp; tests</h3>
+
+<p>!! taps</p>
+
+
+</div>
+
+<div id="sidebar">
+	<div id="sidebar-header">Index</div>
+	<ul>
+<li><a href="#what-is-this">What is this?</a></li>
+<li><a href="#examples">Quick examples</a></li>
+<li><a href="#installing">Installing</a></li>
+<li><a href="#how-tagtag-works">How Tagtag works</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#config">Configuration file</a></li>
+<li><a href="#content-tags">Content tags</a>
+<ul>
+<li><a href="#tag-content">content</a></li>
+<li><a href="#tag-attr">attr <small>(.if, .value)</small></a></li>
+</ul></li>
+<li><a href="#write-tags">Writing your own tags</a></li>
+<li><a href="#included-content">Included content tags</a>
+<ul>
+<li><a href="#tag-h5bp">H5BP</a></li>
+<li><a href="#tag-chrome-frame">Chrome frame</a></li>
+<li><a href="#tag-normalize">Normalize.css</a></li>
+<li><a href="#tag-normalize2">Normalize2.css</a></li>
+<li><a href="#tag-css-reset">CSS Reset</a></li>
+<li><a href="#tag-markdown-hilite">markdown-hilite</a></li>
+</ul></li>
+<li><a href="#included-tags">Included tags</a>
+<ul>
+<li><a href="#tag-obfuscate">obfuscate</a></li>
+<li><a href="#tag-include">include</a></li>
+<li><a href="#tag-exclude">exclude</a></li>
+<li><a href="#tag-markdown">markdown</a></li>
+<li><a href="#tag-dataURI">dataURI</a></li>
+<li><a href="#tag-tabular">tabular</a></li>
+<li><a href="#tag-process">process <small>(.coffee, .less, .sass, .uglify)</small></a></li>
+<li><a href="#tag-autorefresh">autorefresh</a></li>
+<li><a href="#tag-version">version</a></li>
+<li><a href="#tag-python">python</a></li>
+<li><a href="#tag-literal">literal</a></li>
+</ul></li>
+<li><a href="#trouble">Troubleshooting &amp; tests</a></li>
+</ul>
+
+</div>
+
+<script>
+	$('.navpoint').waypoint(function(event){
+		var name = event.currentTarget.name;
+		console.log(name)
+		$('#sidebar a').removeClass('active');
+		$('#sidebar ul').removeClass('active');
+		$('a[href=#' + name + ']').addClass('active');
+		$('a[href=#' + name + ']').parent().parent().addClass('active');
+	}, {
+		offset: '50%'
+	});
+</script>
+
+</body>
+</html>
